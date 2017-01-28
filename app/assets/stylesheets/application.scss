@@ -106,14 +106,16 @@ $navbar-default-brand-color: #ffffff;
   color: #555555;
 }
 
-.btn-add-to-cart {
+.btn-primary {
   margin-top: 1.5em;
   border-color: #a88734 #9c7e31 #846a29;
   background: #f3d078;
   background: -webkit-linear-gradient(top,#f7dfa5,#f0c14b);
   background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
   color: #000000;
-  &:hover {
-    background-color: #f0c14b;
+  &:hover, &:focus, &:active {
+    background-color: #f0c14b !important;
+    color: #000000 !important;
+    border-color: #a88734 #9c7e31 #846a29 !important;
   }
 }
