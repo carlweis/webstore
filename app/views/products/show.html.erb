@@ -2,6 +2,10 @@
 <p>
   <%= @product.description %>
 </p>
-<h5><%= number_to_currency(@product.display_price) %></h5>
+<%= render partial: "rating", locals: {rating: @product.rating} %>
+<div class="price-block">
+  <div class="list-price">List <span><%= number_to_currency(@product.display_list_price) %></span></div>
+  <div class="price"><%= number_to_currency(@product.display_price) %></div>
+</div>
 <hr>
 <%= link_to "Back to Products", products_path %>

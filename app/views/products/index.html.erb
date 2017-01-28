@@ -1,18 +1,28 @@
-<h1>Product Catelog</h1>
+<div class="page-title">Product Catelog</div>
 
 <div class="products_list">
-  <% @products.each_slice(4) do |product_row| %>
+  <% @products.each_slice(6) do |product_row| %>
     <div class="product_row">
       <% product_row.each do |product| %>
         <div class="product_list_item">
-          <%= link_to product  do %>
-            <%= image_tag(product.image.url(:medium))%>
-            <h4><%= product.name %></h4>
-          <% end %>
+          <div class="product-image">
+            <%= link_to image_tag(product.image.url), product %>
+          </div>
+          <div class="product-name"><%= link_to truncate(product.name, length: 20, omission: "..."), product %></div>
+          <%= render partial: "rating", locals: {rating: product.rating} %>
+          <div>
+            <div class="list-price">List <span><%= number_to_currency(product.display_list_price) %></span></div>
+            <div class="price"><%= number_to_currency(product.display_price) %></div>
+          </div>
+          <div>
+            <%= link_to "Add to Cart", "#", class: "btn btn-add-to-cart btn-sm btn-block" %>
+          </div>
         </div>
       <% end %>
     </div>
   <% end %>
 </div>
 
-<%= paginate @products %>
+<div class="text-center">
+  <%= paginate @products %>
+</div>

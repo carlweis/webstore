@@ -21,10 +21,12 @@ gem "redis", "~> 3.0"
 gem "paperclip", "~> 5.0.0"
 gem "aws-sdk", "~> 2"
 gem "bootstrap-sass", "~> 3.3.6"
+gem "font-awesome-sass", "~> 4.7.0"
 
 group :development, :test do
   gem "dotenv-rails"
   gem "byebug", platform: :mri
+  gem "ffaker"
 end
 
 group :development do

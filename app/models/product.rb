@@ -1,11 +1,13 @@
 class Product < ActiveRecord::Base
-    has_attached_file :image,
-      storage: :s3,
-      s3_credentials: Proc.new{ |a| a.instance.s3_credentials },
-      styles: {
-        medium: "300x300>",
-        thumb: "100x100>"
-    }, default_url: "/images/:style/missing.png"
+  paginates_per(24)
+
+  has_attached_file :image,
+    storage: :s3,
+    s3_credentials: Proc.new{ |a| a.instance.s3_credentials },
+    styles: {
+      medium: "300x300>",
+      thumb: "100x100>"
+  }, default_url: "/images/:style/missing.png"
 
   def s3_credentials
     {
@@ -17,5 +19,9 @@ class Product < ActiveRecord::Base
 
   def display_price
     price / 100.0
+  end
+
+  def display_list_price
+    list_price / 100.0
   end
 end

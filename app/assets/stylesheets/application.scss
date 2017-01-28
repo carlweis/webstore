@@ -1,8 +1,25 @@
+$navbar-default-bg: #232f3e;
+$navbar-default-color: #cccccc;
+$navbar-default-link-color: #cccccc;
+$navbar-default-link-active-bg: #232f3e;
+$navbar-default-link-active-color: #cccccc;
+$navbar-default-link-hover-color: #ffffff;
+$navbar-default-brand-color: #ffffff;
+
+.navbar-brand {
+  font-weight: 800;
+}
+
+
 // global
 @import "normalize";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+
 
 .html, body {
   margin: 0;
@@ -37,8 +54,16 @@
 .flash.alert {
   background-color: #ea4335;
   color: #FFFFFF;
+  margin-bottom: 0;
 }
 
+
+.page-title {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
+  padding-bottom: 1em;
+}
 // products
 .products_list {
 
@@ -49,5 +74,46 @@
 }
 
 .product_list_item {
-  @extend .col-md-3;
+  @extend .col-md-2;
+  padding-bottom: 1.5em;
+}
+
+.product-rating i.fa-star {
+  color: #ffbe00;
+}
+.product-rating i.fa-star-o {
+  color: #b98f40;
+}
+.product-image img {
+  margin-bottom: 1em;
+  width: 100%;
+}
+.price {
+  font-size: 13px;
+  line-height: 19px;
+  color: #b12704;
+  display: inline-block;
+}
+.list-price {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.465;
+}
+.list-price span {
+  text-decoration: line-through;
+  font-size: 11px;
+  line-height: 1.465;
+  color: #555555;
+}
+
+.btn-add-to-cart {
+  margin-top: 1.5em;
+  border-color: #a88734 #9c7e31 #846a29;
+  background: #f3d078;
+  background: -webkit-linear-gradient(top,#f7dfa5,#f0c14b);
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  color: #000000;
+  &:hover {
+    background-color: #f0c14b;
+  }
 }

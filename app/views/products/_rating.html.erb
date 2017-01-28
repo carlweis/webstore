@@ -1,0 +1,11 @@
+<div class="product-rating">
+  <% for i in 0..rating do %>
+    <i class="fa fa-star">&nbsp;</i>
+  <% end %>
+  <% if rating < 5 %>
+    <% empty_stars = (5-rating) -1 %>
+    <% empty_stars.times do %>
+      <i class="fa fa-star-o">&nbsp;</i>
+    <% end %>
+  <% end %>
+</div>
