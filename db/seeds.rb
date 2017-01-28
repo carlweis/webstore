@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+
+counter = 0
+100.times do
+  counter += 1
+  Product.create!(name: "Product #{counter}", 
+                  description: "Product Description", 
+                  price: rand(100))
+end

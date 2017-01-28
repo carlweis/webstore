@@ -1,0 +1,21 @@
+// user navigation links
+.user-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+.user-links li {
+  display: inline-block;
+}
+
+.user-links li a {
+  padding: 0.5em;
+}
+
+// flash messages
+.notice {
+  background-color: #00e306;
+  color: #000000;
+}
