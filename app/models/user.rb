@@ -4,4 +4,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
 
+    def admin?
+      self.admin
+    end
+
 end
